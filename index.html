@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehsan Mohaghegh Dowlatabadi | PhD Candidate in Economics</title>
+<meta name="description" content="Ehsan Mohaghegh Dowlatabadi â PhD candidate in Economics at the Maxwell School, Syracuse University. Research in health economics and public economics.">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c8a227;
+    --light-bg: #f7f8fc;
+    --text: #222;
+    --muted: #555;
+    --border: #dde1ec;
+    --link: #1a5276;
+    --link-hover: #c8a227;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: #fff;
+  }
+  /* NAV */
+  nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .nav-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  }
+  .nav-brand {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: #cdd4e8;
+    text-decoration: none;
+    padding: 1rem 1.1rem;
+    font-size: 0.92rem;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.2s, background 0.2s;
+    display: block;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+  }
+  @media(max-width:640px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.75rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); }
+  }
+
+  /* SECTIONS */
+  section { display: none; }
+  section.active { display: block; }
+
+  /* HOME */
+  .home-hero {
+    background: var(--light-bg);
+    padding: 4rem 1.5rem 3rem;
+  }
+  .home-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  .home-photo img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 3px solid #fff;
+    flex-shrink: 0;
+  }
+  .home-text h1 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+  .home-text .title {
+    font-size: 1rem;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+  .home-text .bio {
+    font-size: 0.97rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+  }
+  .jmp-box {
+    background: #fff;
+    border-left: 4px solid var(--gold);
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    border-radius: 0 4px 4px 0;
+    max-width: 620px;
+  }
+  .jmp-box .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  .jmp-box p { font-size: 0.96rem; color: var(--navy); font-style: italic; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--link);
+    text-decoration: none;
+    background: #fff;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-links a:hover { border-color: var(--gold); color: var(--gold); }
+  @media(max-width:640px) {
+    .home-inner { flex-direction: column; gap: 1.5rem; }
+    .home-photo img { width: 140px; height: 170px; }
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  h2 {
+    font-size: 1.55rem;
+    color: var(--navy);
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h3 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin: 2rem 0 0.5rem;
+  }
+
+  /* RESEARCH */
+  .paper {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .paper:last-child { border-bottom: none; }
+  .paper-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+  .paper-status {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+  }
+  .status-jmp { background: #fff3cd; color: #856404; }
+  .status-wp { background: #d1e7dd; color: #0a3622; }
+  .status-wip { background: #e2e3e5; color: #41464b; }
+  .status-pub { background: #cfe2ff; color: #084298; }
+  .paper-authors { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.4rem; font-style: italic; }
+  .paper-desc { font-size: 0.92rem; color: var(--text); margin-bottom: 0.5rem; }
+  .paper-link {
+    font-family: Arial, sans-serif;
+    font-size: 0.83rem;
+    color: var(--link);
+    text-decoration: none;
+  }
+  .paper-link:hover { color: var(--gold); text-decoration: underline; }
+
+  /* TEACHING */
+  .award-box {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .award-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .award-text .award-title { font-weight: bold; color: var(--navy); }
+  .award-text .award-sub { font-size: 0.88rem; color: var(--muted); font-family: Arial, sans-serif; }
+  .teaching-section { margin-bottom: 2rem; }
+  .teaching-section h3 { font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; font-family: Arial, sans-serif; font-weight: bold; border: none; margin-top: 1.5rem; }
+  .course {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+  .course:last-child { border-bottom: none; }
+  .course-name { font-size: 0.94rem; }
+  .course-meta { font-family: Arial, sans-serif; font-size: 0.82rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+  /* CV PAGE */
+  .cv-section {
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+  .cv-section p { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
+  .cv-btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .cv-btn:hover { background: var(--gold); }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media(max-width:600px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-block { margin-bottom: 1.5rem; }
+  .contact-block .label {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .contact-block .value { font-size: 0.97rem; color: var(--text); }
+  .contact-block a { color: var(--link); text-decoration: none; }
+  .contact-block a:hover { color: var(--gold); text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--light-bg);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#" onclick="showSection('home')">Ehsan Mohaghegh Dowlatabadi</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#" onclick="showSection('home')" id="nav-home" class="active">Home</a>
+      <a href="#" onclick="showSection('research')" id="nav-research">Research</a>
+      <a href="#" onclick="showSection('teaching')" id="nav-teaching">Teaching</a>
+      <a href="#" onclick="showSection('cv')" id="nav-cv">Curriculum Vitae</a>
+      <a href="#" onclick="showSection('contact')" id="nav-contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="home-hero">
+    <div class="home-inner">
+      <div class="home-photo">
+        <img src="data:image/jpeg;base64,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" alt="Ehsan Mohaghegh Dowlatabadi">
+      </div>
+      <div class="home-text">
+        <h1>Ehsan Mohaghegh Dowlatabadi</h1>
+        <p class="title">PhD Candidate in Economics &bull; Maxwell School, Syracuse University &bull; Job Market 2026&ndash;2027</p>
+        <p class="bio">I am a PhD candidate in Economics at the Maxwell School, Syracuse University, on the 2026&ndash;2027 job market. My research interests include health economics and public economics. In particular, I study how new technologies and public policies affect maternal behavior and health at birth in the U.S.</p>
+        <div class="jmp-box">
+          <div class="label">Job Market Paper</div>
+          <p>The Smartphone Effect: Mobile Broadband and Health at Birth</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:emmohagh@syr.edu">&#9993; emmohagh@syr.edu</a>
+          <a href="http://www.linkedin.com/in/ehsan-mohaghegh-dowlatabadi-730ab638" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.maxwell.syr.edu/academics/economics-department/people/students/ehsan-dowlatabadi" target="_blank" rel="noopener">SU Profile</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3879000" target="_blank" rel="noopener">SSRN</a>
+          <a href="#" onclick="showSection('cv')">Curriculum Vitae</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="content">
+    <h2>Research</h2>
+
+    <!-- JMP -->
+    <div class="paper">
+      <span class="paper-status status-jmp">Job Market Paper</span>
+      <div class="paper-title">The Smartphone Effect: Mobile Broadband and Health at Birth</div>
+      <div class="paper-authors">With Hamid Noghanibehambari</div>
+      <p class="paper-desc">This paper uses the rollout of iPhone and AT&amp;T&rsquo;s exclusive partnership in 2007 alongside county-level mobile broadband coverage data in a difference-in-differences framework to identify causal effects of smartphone access on maternal health behaviors and infant birth outcomes. Key finding: greater broadband coverage after 2007 reduced average birth weight by approximately 3.9 grams per standard deviation increase in coverage.</p>
+    </div>
+
+    <!-- Working Papers -->
+    <h3>Working Papers</h3>
+
+    <div class="paper">
+      <span class="paper-status status-wp">Working Paper</span>
+      <div class="paper-title">Public Health Insurance and Infant Health: Evidence from Medicaid Funding Cuts in Texas</div>
+      <div class="paper-authors">With Quan Qi, Xin Brown, Nahid Tavasoli, and Hamid Noghanibehambari</div>
+      <a class="paper-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7578642" target="_blank" rel="noopener">&#8599; SSRN Working Paper</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-status status-wp">Working Paper</span>
+      <div class="paper-title">Public Prescription Drug Insurance and Welfare: Evidence from Medicare Part D</div>
+      <p class="paper-desc">Examines welfare effects of public prescription drug insurance using the Medical Expenditure Panel Survey (MEPS) for 2000&ndash;2012 and an instrumental variables estimation strategy.</p>
+    </div>
+
+    <div class="paper">
+      <span class="paper-status status-wp">Working Paper</span>
+      <div class="paper-title">Long-Term Mental Health Effects of Schooling in Four Diverse Low- and Middle-Income Countries: New Causal Evidence</div>
+      <div class="paper-authors">With Vikesh Amin, Alfonso Flores-Lagunes, Carlos Flores, and Giuseppe Germinario</div>
+      <p class="paper-desc">Uses aging study data from Brazil, China, India, and Mexico to estimate causal effects of schooling on long-term mental health outcomes.</p>
+    </div>
+
+    <!-- Work in Progress -->
+    <h3>Work in Progress</h3>
+
+    <div class="paper">
+      <span class="paper-status status-wip">In Progress</span>
+      <div class="paper-title">No-Fault Divorce Laws and Birth Outcomes <em style="font-weight:normal;color:var(--muted);">[Draft Coming Soon]</em></div>
+      <div class="paper-authors">With Hamid Noghanibehambari</div>
+    </div>
+
+    <div class="paper">
+      <span class="paper-status status-wip">In Progress</span>
+      <div class="paper-title">Unemployment at Older Ages and Food Security: The Role of Social Insurance <em style="font-weight:normal;color:var(--muted);">[Draft Coming Soon]</em></div>
+      <div class="paper-authors">With Andrew Smith and Jooyoung Kim</div>
+    </div>
+
+    <!-- Publication -->
+    <h3>Pre-PhD Publication</h3>
+
+    <div class="paper">
+      <span class="paper-status status-pub">Published</span>
+      <div class="paper-title">The Indirect Effects of Oil Price on Consumption through Assets</div>
+      <div class="paper-authors">With Seyedeh Fatemeh Razmi, Leila Torki, and Seyed Mohammad Javad Razmi</div>
+      <p class="paper-desc"><em>International Journal of Energy Economics and Policy</em>, 12(1): 236&ndash;242, 2022.</p>
+      <a class="paper-link" href="https://econjournals.com/index.php/ijeep/article/view/12528" target="_blank" rel="noopener">&#8599; View Article</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="content">
+    <h2>Teaching</h2>
+
+    <div class="award-box">
+      <div class="award-icon">&#127942;</div>
+      <div class="award-text">
+        <div class="award-title">Outstanding Teaching Assistant Award</div>
+        <div class="award-sub">Syracuse University &mdash; April 2024</div>
+      </div>
+    </div>
+
+    <div class="teaching-section">
+      <h3>Instructor &mdash; Syracuse University</h3>
+      <div class="course">
+        <span class="course-name">Intermediate Microeconomics</span>
+        <span class="course-meta">2024, 2025</span>
+      </div>
+    </div>
+
+    <div class="teaching-section">
+      <h3>Guest Lecturer &mdash; Syracuse University</h3>
+      <div class="course">
+        <span class="course-name">Labor Economics</span>
+        <span class="course-meta">Spring 2026</span>
+      </div>
+      <div class="course">
+        <span class="course-name">Statistics</span>
+        <span class="course-meta">Spring 2026</span>
+      </div>
+      <div class="course">
+        <span class="course-name">Introduction to Microeconomics</span>
+        <span class="course-meta">2021&ndash;2023</span>
+      </div>
+    </div>
+
+    <div class="teaching-section">
+      <h3>Teaching Assistant &mdash; Syracuse University</h3>
+      <div class="course">
+        <span class="course-name">Advanced Statistics (PhD level)</span>
+        <span class="course-meta">Summer 2023</span>
+      </div>
+      <div class="course">
+        <span class="course-name">Quantitative Methods</span>
+        <span class="course-meta">Fall 2026</span>
+      </div>
+      <div class="course">
+        <span class="course-name">Introduction to Macroeconomics</span>
+        <span class="course-meta">2022&ndash;2025</span>
+      </div>
+    </div>
+
+    <div class="teaching-section">
+      <h3>Teaching Assistant &mdash; Binghamton University</h3>
+      <div class="course">
+        <span class="course-name">Intermediate Microeconomics</span>
+        <span class="course-meta">Fall 2019</span>
+      </div>
+      <div class="course">
+        <span class="course-name">Introduction to Microeconomics</span>
+        <span class="course-meta">Spring 2020</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="content">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-section">
+      <p>My full curriculum vitae is available for download as a PDF.</p>
+      <a class="cv-btn" href="https://drive.google.com/file/d/1nAtfNqQQHwvZjJJmHLdARBI7YSxQbWEf/view?usp=sharing" target="_blank" rel="noopener">&#8595; Download CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="content">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-block">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:emmohagh@syr.edu">emmohagh@syr.edu</a></div>
+        </div>
+        <div class="contact-block">
+          <div class="label">Office</div>
+          <div class="value">426 Eggers Hall<br>Center for Policy Research<br>Maxwell School of Citizenship and Public Affairs<br>Syracuse University<br>Syracuse, NY</div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-block">
+          <div class="label">LinkedIn</div>
+          <div class="value"><a href="http://www.linkedin.com/in/ehsan-mohaghegh-dowlatabadi-730ab638" target="_blank" rel="noopener">linkedin.com/in/ehsan-mohaghegh-dowlatabadi</a></div>
+        </div>
+        <div class="contact-block">
+          <div class="label">University Profile</div>
+          <div class="value"><a href="https://www.maxwell.syr.edu/academics/economics-department/people/students/ehsan-dowlatabadi" target="_blank" rel="noopener">Maxwell School, Syracuse University</a></div>
+        </div>
+        <div class="contact-block">
+          <div class="label">SSRN</div>
+          <div class="value"><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3879000" target="_blank" rel="noopener">SSRN Author Page</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Ehsan Mohaghegh Dowlatabadi &bull; PhD Candidate in Economics, Maxwell School, Syracuse University
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  // Close mobile menu
+  document.getElementById('nav-links').classList.remove('open');
+  window.scrollTo(0, 0);
+  return false;
+}
+
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+
+// Handle direct hash navigation
+const sectionMap = { '': 'home', 'home': 'home', 'research': 'research', 'teaching': 'teaching', 'cv': 'cv', 'contact': 'contact' };
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  const sec = sectionMap[hash] || 'home';
+  showSection(sec);
+}
+window.addEventListener('hashchange', handleHash);
+</script>
+</body>
+</html>
